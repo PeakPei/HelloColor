@@ -10,8 +10,8 @@
 #import "ButtonNode.h"
 #import "ViewController.h"
 #import "gameBoardNode.h"
-
 #import "ProgressTimerNode.h"
+#import "InfoScene.h"
 
 #define GAME_TIME 60
 #define CYCLES_PER_SECOND (1.0f/GAME_TIME)
@@ -43,6 +43,8 @@
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        NSLog(@"~~~~Game Scene~~~~");
+        
         /* Setup your scene here */
         self.backgroundColor = [SKColor colorWithRed:0 green:0 blue:0 alpha:1.0];
 
@@ -134,7 +136,6 @@
             SKSpriteNode *textCopyright = [SKSpriteNode spriteNodeWithTexture:[_atlas textureNamed:@"text-copyright"]];
             textCopyright.name = @"textCopyright";
             CGFloat copyrightY = [[_gameData objectForKey:@"copyright-Y"] floatValue];
-            NSLog(@"~~~~~~~%f~~~~~~~", copyrightY);
             textCopyright.position = CGPointMake(CGRectGetMidX(self.frame), copyrightY);
             [self addChild:textCopyright];
             
@@ -160,7 +161,7 @@
             _rateButton.name = @"rateButton";
             CGFloat rateButtonX = [[_gameData objectForKey:@"button-rate-X"] floatValue];
             _rateButton.position = CGPointMake(rateButtonX, buttonsY);
-            [_rateButton setMethod: ^ (void) {}];
+            [_rateButton setMethod: ^ (void) { [weakSelf rateButtonPressed]; }];
             [self addChild:_rateButton];
             
             // Share Button
@@ -170,7 +171,7 @@
             _shareButton.name = @"shareButton";
             CGFloat shareButtonX = [[_gameData objectForKey:@"button-share-X"] floatValue];
             _shareButton.position = CGPointMake(shareButtonX, buttonsY);
-            [_shareButton setMethod: ^ (void) {}];
+            [_shareButton setMethod: ^ (void) { [weakSelf shareButtonPressed]; }];
             [self addChild:_shareButton];
             
             // Info Button
@@ -180,7 +181,7 @@
             _infoButton.name = @"infoButton";
             CGFloat infoButtonX = [[_gameData objectForKey:@"button-info-X"] floatValue];
             _infoButton.position = CGPointMake(infoButtonX, buttonsY);
-            [_infoButton setMethod: ^ (void) {}];
+            [_infoButton setMethod: ^ (void) { [weakSelf infoButtonPressed]; }];
             [self addChild:_infoButton];
             
             // Level text
@@ -204,7 +205,6 @@
             CGFloat progressTimerNodeY = [[_gameData objectForKey:@"progress-timer-Y"] floatValue];
             _progressTimerNode.position = CGPointMake(progressTimerNodeX, progressTimerNodeY);
             [self addChild:_progressTimerNode];
-            _progressTimerNode.hidden = YES;
             
             
             // Count down text
@@ -220,19 +220,11 @@
             [self addChild:_timerLabel];
             
             _isGameStoped = YES;
-        
+    
         }
 
     }
     return self;
-}
-
-- (void)playButtonPressed {
-    [_logo setHidden:YES];
-    [_playButton setHidden:YES];
-    [_scoreButton setHidden:YES];
-    [self startNewGame];
-    
 }
 
 - (void) startNewGame {
@@ -330,6 +322,33 @@
             [_progressTimerNode setProgress:progress];
         }
     }
+}
+
+- (void)playButtonPressed {
+    [_logo setHidden:YES];
+    [_playButton setHidden:YES];
+    [_scoreButton setHidden:YES];
+    [self startNewGame];
+    
+}
+
+- (void)infoButtonPressed {
+    SKScene * infoScene = [[InfoScene alloc] initWithSize:self.size];
+    SKTransition *fade = [SKTransition fadeWithColor:[SKColor blackColor] duration:1.5];
+    [self.view presentScene:infoScene transition:fade];
+}
+
+- (void)rateButtonPressed {/*
+    InfoViewController *infoVC = [[InfoViewController alloc] init];
+    UIViewController *rootVC = self.view.window.rootViewController;
+    [rootVC presentViewController:infoVC animated:YES completion:nil];*/
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Rate fuction is in developing." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void)shareButtonPressed {
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Share fuction is in developing." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"whatever", nil];
+    [alertView show];
 }
 
 @end

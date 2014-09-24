@@ -23,7 +23,7 @@
         self.maskNode = maskImageNode;
         
         //NSLog(@"~~~~~~~width: %f~~~~~~~", maskImageNode.size.width);
-        _healthBarNode = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:57.0f/255.0f green:181.0f/255.0f blue:74.0f/255.0f alpha:1.0] size:maskImageNode.size];
+        _healthBarNode = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:57.0f/255.0f green:181.0f/255.0f blue:74.0f/255.0f alpha:1.0] size:maskImageNode.size];
         
         // make _healthBarNode anchor to the bottom
         _healthBarNode.anchorPoint = VERTICAL_START_POINT;

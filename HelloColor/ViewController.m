@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "GameScene.h"
+#import "InfoViewController.h"
 
 @import AVFoundation;
 
@@ -57,8 +58,8 @@
         [self.backgroundMusicPlayer play];
     }
     
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     

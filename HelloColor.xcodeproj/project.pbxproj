@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F41B0B919D2809E0003EF4B /* InfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41B0B819D2809E0003EF4B /* InfoScene.m */; };
 		1FA3CFB819CCC415002A0A3E /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3CFB719CCC415002A0A3E /* sprite.atlas */; };
 		1FA3CFBB19CD4A81002A0A3E /* ButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3CFBA19CD4A81002A0A3E /* ButtonNode.m */; };
 		1FA3CFBE19CE006B002A0A3E /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3CFBD19CE006B002A0A3E /* GameData.plist */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F41B0B719D2809E0003EF4B /* InfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScene.h; sourceTree = "<group>"; };
+		1F41B0B819D2809E0003EF4B /* InfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScene.m; sourceTree = "<group>"; };
 		1FA3CFB719CCC415002A0A3E /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		1FA3CFB919CD4A81002A0A3E /* ButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonNode.h; sourceTree = "<group>"; };
 		1FA3CFBA19CD4A81002A0A3E /* ButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonNode.m; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 			children = (
 				1FACCB1719CBFE1300879DDD /* GameScene.h */,
 				1FACCB1819CBFE1300879DDD /* GameScene.m */,
+				1F41B0B719D2809E0003EF4B /* InfoScene.h */,
+				1F41B0B819D2809E0003EF4B /* InfoScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F41B0B919D2809E0003EF4B /* InfoScene.m in Sources */,
 				1FACCAE819CBFAD800879DDD /* ViewController.m in Sources */,
 				1FA3CFBB19CD4A81002A0A3E /* ButtonNode.m in Sources */,
 				1FA3CFC119CE4760002A0A3E /* gameBoardNode.m in Sources */,
