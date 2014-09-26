@@ -1,18 +1,17 @@
 //
-//  ViewController.m
+//  GameViewController.m
 //  HelloColor
 //
 //  Created by Jeff on 9/19/14.
 //  Copyright (c) 2014 Jeff. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
 #import "GameScene.h"
-#import "InfoViewController.h"
 
 @import AVFoundation;
 
-@interface ViewController() {
+@interface GameViewController() {
     bool iadsOnTop;
     bool iadsBannerIsVisible;
     ADBannerView* theBanner;
@@ -20,7 +19,7 @@
 @property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
 @end
 
-@implementation ViewController {
+@implementation GameViewController {
     NSUserDefaults * _settings;
 }
 
@@ -35,9 +34,8 @@
     
     [super viewWillLayoutSubviews];
     
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    if (!skView.scene) {
+    
+    if (!self.subviewForGameScene) {
         _settings = [NSUserDefaults standardUserDefaults];
         if([_settings objectForKey:@"sound"] == nil) {
             [_settings setObject:@"YES" forKey:@"sound"];
@@ -58,16 +56,7 @@
         [self.backgroundMusicPlayer play];
     }
     
-    skView.showsFPS = NO;
-    skView.showsNodeCount = NO;
     
-    // Create and configure the scene.
-    
-    SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
     
     // for iAds
     // plist of game data
@@ -75,23 +64,27 @@
     NSMutableDictionary *rootData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     if ([[rootData objectForKey:@"enable-ad"] boolValue])
         [self showThinBanner];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 
 }
 
-- (void)viewDidLoad {/*
+- (void)viewDidLoad {
     [super viewDidLoad];
-
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    //SKView * skView = (SKView *)self.view;
+    SKView * skView = (SKView *)self.subviewForGameScene;
+    
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];*/
+    [skView presentScene:scene];
+
 }
 
 - (BOOL)prefersStatusBarHidden {

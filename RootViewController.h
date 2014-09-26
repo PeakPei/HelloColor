@@ -1,5 +1,5 @@
 //
-//  InfoViewController.h
+//  RootViewController.h
 //  HelloColor
 //
 //  Created by Jeff on 9/24/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController: UIViewController
+@interface RootViewController: UIViewController
 
 @end

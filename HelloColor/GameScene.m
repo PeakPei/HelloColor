@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 #import "ButtonNode.h"
-#import "ViewController.h"
+#import "GameViewController.h"
 #import "gameBoardNode.h"
 #import "ProgressTimerNode.h"
 #import "InfoScene.h"
@@ -55,18 +55,16 @@
         NSMutableDictionary *rootData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
         
         if ([[rootData objectForKey:@"enable-ad"] boolValue]) { // enable ad
-            if(size.height == 480) { // 3.5 inch
-                _gameData = [rootData objectForKey:@"iphone-3.5-with-ad"];
-                
-            } else if (size.height == 568) { // 4 inch
+            if (size.height == 568) { // 4 inch
                 _gameData = [rootData objectForKey:@"iphone-4.3-with-ad"];
+            } else { // if(size.height == 480) { // 3.5 inch
+                _gameData = [rootData objectForKey:@"iphone-3.5-with-ad"];
             }
         } else { // disenable ad
-            if(size.height == 480) { // 3.5 inch
-                _gameData = [rootData objectForKey:@"iphone-3.5-non-ad"];
-                
-            } else if (size.height == 568) { // 4 inch
+            if (size.height == 568) { // 4 inch
                 _gameData = [rootData objectForKey:@"iphone-4.3-non-ad"];
+            } else { // if(size.height == 480) { // 3.5 inch
+                _gameData = [rootData objectForKey:@"iphone-3.5-non-ad"];
             }
         }
         
@@ -150,8 +148,8 @@
             CGFloat muteButtonX = [[_gameData objectForKey:@"button-mute-X"] floatValue];
             _muteButton.position = CGPointMake(muteButtonX, buttonsY);
             [_muteButton setMethod: ^ (void) {
-                ViewController * viewController = (ViewController *) weakSelf.view.window.rootViewController;
-                [viewController switchSound]; }];
+                GameViewController * gameViewController = (GameViewController *) weakSelf.view.window.rootViewController;
+                [gameViewController switchSound]; }];
             [self addChild:_muteButton];
             
             // Rate Button

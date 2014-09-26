@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F41B0B919D2809E0003EF4B /* InfoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41B0B819D2809E0003EF4B /* InfoScene.m */; };
+		1F41B0C519D524750003EF4B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41B0C419D524750003EF4B /* RootViewController.m */; };
 		1FA3CFB819CCC415002A0A3E /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3CFB719CCC415002A0A3E /* sprite.atlas */; };
 		1FA3CFBB19CD4A81002A0A3E /* ButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3CFBA19CD4A81002A0A3E /* ButtonNode.m */; };
 		1FA3CFBE19CE006B002A0A3E /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3CFBD19CE006B002A0A3E /* GameData.plist */; };
@@ -20,7 +21,7 @@
 		1FACCADE19CBFAD800879DDD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACCADD19CBFAD800879DDD /* main.m */; };
 		1FACCAE219CBFAD800879DDD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACCAE119CBFAD800879DDD /* AppDelegate.m */; };
 		1FACCAE519CBFAD800879DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FACCAE319CBFAD800879DDD /* Main.storyboard */; };
-		1FACCAE819CBFAD800879DDD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACCAE719CBFAD800879DDD /* ViewController.m */; };
+		1FACCAE819CBFAD800879DDD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACCAE719CBFAD800879DDD /* GameViewController.m */; };
 		1FACCAEF19CBFAD800879DDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FACCAEE19CBFAD800879DDD /* Images.xcassets */; };
 		1FACCAF619CBFAD800879DDD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FACCAF519CBFAD800879DDD /* XCTest.framework */; };
 		1FACCAF719CBFAD800879DDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FACCACF19CBFAD800879DDD /* Foundation.framework */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		1F41B0B719D2809E0003EF4B /* InfoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScene.h; sourceTree = "<group>"; };
 		1F41B0B819D2809E0003EF4B /* InfoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScene.m; sourceTree = "<group>"; };
+		1F41B0C319D524750003EF4B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1F41B0C419D524750003EF4B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		1FA3CFB719CCC415002A0A3E /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		1FA3CFB919CD4A81002A0A3E /* ButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonNode.h; sourceTree = "<group>"; };
 		1FA3CFBA19CD4A81002A0A3E /* ButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonNode.m; sourceTree = "<group>"; };
@@ -70,8 +73,8 @@
 		1FACCAE019CBFAD800879DDD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HelloColor/AppDelegate.h; sourceTree = "<group>"; };
 		1FACCAE119CBFAD800879DDD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HelloColor/AppDelegate.m; sourceTree = "<group>"; };
 		1FACCAE419CBFAD800879DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1FACCAE619CBFAD800879DDD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = HelloColor/ViewController.h; sourceTree = "<group>"; };
-		1FACCAE719CBFAD800879DDD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = HelloColor/ViewController.m; sourceTree = "<group>"; };
+		1FACCAE619CBFAD800879DDD /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = HelloColor/GameViewController.h; sourceTree = "<group>"; };
+		1FACCAE719CBFAD800879DDD /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = HelloColor/GameViewController.m; sourceTree = "<group>"; };
 		1FACCAEE19CBFAD800879DDD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FACCAF419CBFAD800879DDD /* HelloColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FACCAF519CBFAD800879DDD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -147,8 +150,10 @@
 				1FACCAE019CBFAD800879DDD /* AppDelegate.h */,
 				1FACCAE119CBFAD800879DDD /* AppDelegate.m */,
 				1FACCAE319CBFAD800879DDD /* Main.storyboard */,
-				1FACCAE619CBFAD800879DDD /* ViewController.h */,
-				1FACCAE719CBFAD800879DDD /* ViewController.m */,
+				1FACCAE619CBFAD800879DDD /* GameViewController.h */,
+				1FACCAE719CBFAD800879DDD /* GameViewController.m */,
+				1F41B0C319D524750003EF4B /* RootViewController.h */,
+				1F41B0C419D524750003EF4B /* RootViewController.m */,
 				1FACCAFB19CBFAD800879DDD /* HelloColorTests */,
 				1FACCACE19CBFAD800879DDD /* Frameworks */,
 				1FACCACD19CBFAD800879DDD /* Products */,
@@ -351,10 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F41B0B919D2809E0003EF4B /* InfoScene.m in Sources */,
-				1FACCAE819CBFAD800879DDD /* ViewController.m in Sources */,
+				1FACCAE819CBFAD800879DDD /* GameViewController.m in Sources */,
 				1FA3CFBB19CD4A81002A0A3E /* ButtonNode.m in Sources */,
 				1FA3CFC119CE4760002A0A3E /* gameBoardNode.m in Sources */,
 				1FACCAE219CBFAD800879DDD /* AppDelegate.m in Sources */,
+				1F41B0C519D524750003EF4B /* RootViewController.m in Sources */,
 				1FACCB1919CBFE1300879DDD /* GameScene.m in Sources */,
 				1FCE6CED19CFC3270078CEEC /* ProgressTimerNode.m in Sources */,
 				1FACCADE19CBFAD800879DDD /* main.m in Sources */,

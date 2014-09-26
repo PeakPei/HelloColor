@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GameViewController.h
 //  HelloColor
 //
 
@@ -10,7 +10,8 @@
 #import <SpriteKit/SpriteKit.h>
 #import <iAd/iAd.h>
 
-@interface ViewController : UIViewController <ADBannerViewDelegate>
+@interface GameViewController : UIViewController <ADBannerViewDelegate>
+@property (weak, nonatomic) IBOutlet SKView *subviewForGameScene;
 
 -(void) turnOffSound;
 -(void) turnOnSound;
