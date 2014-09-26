@@ -148,8 +148,20 @@
             CGFloat muteButtonX = [[_gameData objectForKey:@"button-mute-X"] floatValue];
             _muteButton.position = CGPointMake(muteButtonX, buttonsY);
             [_muteButton setMethod: ^ (void) {
-                GameViewController * gameViewController = (GameViewController *) weakSelf.view.window.rootViewController;
-                [gameViewController switchSound]; }];
+                // GameViewController * gameViewController = (GameViewController *) weakSelf.view.window.rootViewController.presentingViewController;
+                // [gameViewController switchSound];
+                
+                if ([weakSelf.view.window.rootViewController isKindOfClass:[GameViewController class]]) {
+                    [weakSelf.view.window.rootViewController performSelector:@selector(switchSound)];
+                } else {
+                    for (UIViewController *vc in [weakSelf.view.window.rootViewController childViewControllers]) {
+                        if ([vc isKindOfClass:[GameViewController class]]) {
+                            [vc performSelector:@selector(switchSound)];
+                        }
+                    }
+                }
+                // [GameViewController switchSound];
+            }];
             [self addChild:_muteButton];
             
             // Rate Button
@@ -332,7 +344,7 @@
 
 - (void)infoButtonPressed {
     SKScene * infoScene = [[InfoScene alloc] initWithSize:self.size];
-    SKTransition *fade = [SKTransition fadeWithColor:[SKColor blackColor] duration:1.5];
+    SKTransition *fade = [SKTransition fadeWithColor:[SKColor blackColor] duration:0.5];
     [self.view presentScene:infoScene transition:fade];
 }
 

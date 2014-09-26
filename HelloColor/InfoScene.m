@@ -95,7 +95,7 @@
 /*
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(100, 100, 110, 300)];
    //  webView.delegate = self;
-    NSURL *url = [NSURL URLWithString:@"http://www.test.de"];
+    NSURL *url = [NSURL URLWithString:@"http://jeffw.us"];
                   NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
                   [webView loadRequest:request];
                   [self.view addSubview:webView];*/

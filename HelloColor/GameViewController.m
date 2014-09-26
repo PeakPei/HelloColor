@@ -35,26 +35,7 @@
     [super viewWillLayoutSubviews];
     
     
-    if (!self.subviewForGameScene) {
-        _settings = [NSUserDefaults standardUserDefaults];
-        if([_settings objectForKey:@"sound"] == nil) {
-            [_settings setObject:@"YES" forKey:@"sound"];
-        }
-    }
     
-    NSString * musicPlaySetting = [_settings objectForKey:@"sound"];
-    
-    NSError *error;
-    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"bgm" withExtension:@"m4a"];
-    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
-    
-    self.backgroundMusicPlayer.numberOfLoops = -1;
-    [self.backgroundMusicPlayer prepareToPlay];
-    
-    if ([musicPlaySetting isEqualToString:@"YES"]) {
-        // Add Background Music
-        [self.backgroundMusicPlayer play];
-    }
     
     
     
@@ -74,6 +55,27 @@
     // Configure the view.
     //SKView * skView = (SKView *)self.view;
     SKView * skView = (SKView *)self.subviewForGameScene;
+    
+    if (!skView.scene) {
+        _settings = [NSUserDefaults standardUserDefaults];
+        if([_settings objectForKey:@"sound"] == nil) {
+            [_settings setObject:@"YES" forKey:@"sound"];
+        }
+    }
+    
+    NSString * musicPlaySetting = [_settings objectForKey:@"sound"];
+    
+    NSError *error;
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"bgm" withExtension:@"m4a"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    
+    if ([musicPlaySetting isEqualToString:@"YES"]) {
+        // Add Background Music
+        [self.backgroundMusicPlayer play];
+    }
     
     skView.showsFPS = NO;
     skView.showsNodeCount = NO;
@@ -121,6 +123,8 @@
 }
 
 -(void) switchSound {
+    
+    NSLog(@"~~~~~switch, isSound:%d~~~~~", [self isSound]);
     if ([self isSound]) {
         [self turnOffSound];
     }else{
